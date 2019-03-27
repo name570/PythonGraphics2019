@@ -25,34 +25,32 @@ def add_button():
 
     c,r = root.size()
 
-    root.rowconfigure(r + 1, weight = 0)
+    root.rowconfigure(r + 1, weight = 1)
 
     But = Button(root, text = "Random color", command = colorize)
-    But.grid(row = r + 1,column = 0,sticky = E+W+S+N)
+    But.grid(row = r + 1,column = 0, sticky=E+W+S+N)
     Lab = Label(root, text = "My Label")
-    Lab.grid(row = r + 1, column = 1, sticky = E+W+S+N)
+    Lab.grid(row = r + 1, column = 1, sticky=E+W+S+N)
 
 
 TKroot = Tk()
 TKroot.title("Hello")
 
 root = Frame(TKroot)
-root.place(relx = 0, rely = 0, relheight = 1, relwidth = 1)
+root.grid(sticky=E+W+S+N)
 
 root.columnconfigure(0, weight = 1)
-root.columnconfigure(1, weight = 1)
-root.rowconfigure(0, weight = 0)
-root.rowconfigure(1, weight = 0)
+root.columnconfigure(0, weight = 1)
+root.rowconfigure(0, weight = 1)
+
 
 
 Butt = Button(root, text = "Add", command = add_button)
-Butt.grid(row = 0, column =0, sticky = E+W+S+N)
+Butt.grid(row = 0, column = 0, sticky=E+W+S+N)
 
 Exit = Button(root, text = "Exit", command = root.quit)
-Exit.grid(row = 0, column = 1, sticky = E+W+S+N)
+Exit.grid(row = 0, column = 1, sticky=E+W+S+N)
 
-# Txt = Label(root, text="This is a label", bg="PeachPuff")
-# Txt.grid(row=1, column=0, columnspan=2, sticky=E+W+N)
 
 TKroot.mainloop()
 print("Done")
