@@ -20,7 +20,7 @@ def add_button():
 
         But["background"] = randomcolor()
         But["foreground"] = randomcolor()
-        Lab["background"]  = randomcolor()
+        Lab["background"] = randomcolor()
         Lab["foreground"] = randomcolor()
 
     c,r = root.size()
@@ -28,28 +28,31 @@ def add_button():
     root.rowconfigure(r + 1, weight = 1)
 
     But = Button(root, text = "Random color", command = colorize)
-    But.grid(row = r + 1,column = 0, sticky=E+W+S+N)
+    But.grid(row = r + 1,column = 0, sticky= E + W + S + N)
     Lab = Label(root, text = "My Label")
-    Lab.grid(row = r + 1, column = 1, sticky=E+W+S+N)
+    Lab.grid(row = r + 1, column = 1, sticky= E + W + S + N)
 
 
 TKroot = Tk()
 TKroot.title("Hello")
+
+TKroot.columnconfigure(0, weight = 1)
+TKroot.rowconfigure(0, weight = 1)
 
 root = Frame(TKroot)
 root.grid(sticky=E+W+S+N)
 
 root.columnconfigure(0, weight = 1)
 root.columnconfigure(0, weight = 1)
-root.rowconfigure(0, weight = 1)
+root.rowconfigure(0, weight = 0)
 
 
 
 Butt = Button(root, text = "Add", command = add_button)
-Butt.grid(row = 0, column = 0, sticky=E+W+S+N)
+Butt.grid(row = 0, column = 0, sticky = E + W + S + N)
 
 Exit = Button(root, text = "Exit", command = root.quit)
-Exit.grid(row = 0, column = 1, sticky=E+W+S+N)
+Exit.grid(row = 0, column = 1, sticky = E + W + S +N)
 
 
 TKroot.mainloop()
